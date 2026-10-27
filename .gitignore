@@ -1,0 +1,23 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+# Local state and credentials
+data/*.json
+!data/users.json
+!data/portfolios.json
+!data/rates.json
+!data/exchange_rates.json
+logs/
+*.log
+*.tmp
+.env
+.env.*
+.ruff_cache/
+*.egg-info/

@@ -1,0 +1,42 @@
+[project]
+name = "valutatrade-hub"
+version = "0.1.0"
+description = "Валютный кошелёк с CLI, JSON-хранилищем и сервисом курсов"
+readme = "README.md"
+authors = [
+    { name = "Гуреев", email = "amgureev@edu.hse.ru" }
+]
+requires-python = ">=3.12"
+dependencies = ["prettytable==3.18.0", "requests==2.32.5"]
+
+[project.scripts]
+project = "valutatrade_hub.cli.interface:main"
+
+[build-system]
+requires = ["uv_build>=0.13.5,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-root = ""
+
+[dependency-groups]
+dev = ["ruff==0.17.2"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+exclude = [".venv", "dist", "__pycache__"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.valutatrade]
+data_dir = "data"
+log_dir = "logs"
+rates_ttl_seconds = 300
+default_base_currency = "USD"
+log_format = "json"
+log_level = "INFO"
+log_max_bytes = 1048576
+log_backup_count = 3
+update_interval = 300
